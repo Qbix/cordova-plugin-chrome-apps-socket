@@ -597,7 +597,7 @@ static NSString* stringFromData(NSData* data) {
     NSString* socketType = socket->_mode;
     NSNumber* connected = [NSNumber numberWithBool:[socket->_socket isConnected]];
     NSString* localAddress = [socket->_socket localHost];
-    NSNumber* localPort = [NSNumber numberWithUnsignedInt:[socket->_socket localPort]];
+    NSNumber* localPort = [NSNumber numberWithUnsignedInt:[(GCDAsyncSocket*)socket->_socket localPort]];
     NSString* peerAddress = [socket->_socket connectedHost];
     NSNumber* peerPort = [NSNumber numberWithUnsignedInt:[socket->_socket connectedPort]];
 
